@@ -1,0 +1,109 @@
+.screen {
+        display: flex;
+        height: 600px;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+
+
+}
+
+
+.cards
+{
+    height: 500px;
+    width: 500px;
+
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+
+
+
+
+    }
+
+.card
+{
+    height: 140px;
+    width: 140px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative; /* to place one card behind another */
+
+    transition: all 700ms linear;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    -moz-backface-visibility: hidden; /* important for Firefox */
+
+
+}
+
+/* avoid mersanie Chrome !!! */
+
+
+.card:hover {
+    transform: rotateY(180deg);
+
+
+}
+
+.front, .back{
+         border: 1.5px solid azure;
+         border-radius: 15px;
+         border-color: darkgrey;
+         width: 140px;
+         height: 140px;
+         flex: 0 0 140px;
+         display: flex; /* контейнер для тексту */
+         align-items: center;
+         justify-content: center;
+         position: absolute; /* to place one card behind another */
+
+
+}
+
+.front {
+    background: lemonchiffon;
+    z-index: 2;
+    backface-visibility: hidden;
+
+
+}
+
+.back {
+    background: lightblue;
+    z-index: 1;
+    transform: rotateY(180deg);
+    backface-visibility: hidden; /* to avoid flicker in Chrome */
+
+}
+
+
+
+
+.country {
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+
+}
+
+body {
+    background-image: url("world5.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
